@@ -567,6 +567,7 @@ const ServeCube = module.exports = {
 							({value} = result);
 						} else {
 							try {
+								res.set("Content-Type", "application/json");
 								value = JSON.stringify(result.value);
 							} catch (err) {
 								throw new ServeCubeError(`An error occured while evaluating \`${options.basePath + req.rawPath}\`.\n${err.stack}`);
